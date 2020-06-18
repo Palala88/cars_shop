@@ -1,0 +1,16 @@
+<div class="inputData">
+  <input
+    type="text"
+    class="form-control inputData-car"
+    [(ngModel)]="carName"
+    placeholder="Enter name"
+  />
+  <input
+    type="number"
+    class="form-control inputData-car"
+    [(ngModel)]="carYear"
+    placeholder="Enter year"
+  />
+
+  <button class="btn btn-primary" (click)="addCar()">Add car</button>
+</div>

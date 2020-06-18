@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+}
+.car_item {
+  display: flex;
+}
+.car_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.car_item-info {
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.car_item-info:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.66);
+}
+.status_sales-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-buy {
+  margin-right: 10px;
+}
+.change {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.input_change {
+  max-width: 35%;
+  margin-right: 10px;
+}

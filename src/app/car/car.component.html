@@ -1,0 +1,57 @@
+<div class="row car_item">
+  <div
+    [ngClass]="getClass()"
+    class="col-lg-3 car_item-info"
+    (click)="carInfo()"
+  >
+    <div class="car_info">
+      <div>
+        <h4>Name: {{ carItem.name }}</h4>
+        <p>Year: {{ carItem.year }}</p>
+      </div>
+      <button class="btn btn-info" (click)="showInputOnChange($event)">
+        Change
+      </button>
+    </div>
+    <div class="status_sales-button">
+      <div>
+        <button
+          class="btn btn-sm btn-primary button-buy"
+          [disabled]="carItem.isSold"
+          (click)="onAction(carStatus.Buy, $event)"
+        >
+          Buy
+        </button>
+        <button
+          class="btn btn-sm btn-primary"
+          [disabled]="!carItem.isSold"
+          (click)="onAction(carStatus.Refund, $event)"
+        >
+          Refund
+        </button>
+      </div>
+      <input
+        type="image"
+        src="../../assets/img/delete_icon.png"
+        [ngStyle]="{ 'max-height.px': 18 }"
+        (click)="carDelete()"
+      />
+    </div>
+  </div>
+
+  <div class="col-lg-9 form-group change" *ngIf="change">
+    <p [ngStyle]="{ 'min-width.%': 15, 'margin-right.px': 10 }">
+      Change name car:
+    </p>
+    <input
+      type="text"
+      name="test"
+      class="form-control input_change"
+      [formControl]="changeName"
+    />
+    <button class="btn btn-sm btn-primary" (click)="saveChange()">
+      Save
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>

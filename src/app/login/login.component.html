@@ -1,0 +1,67 @@
+<div class="login">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>
+        Name:
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          formControlName="name"
+        />
+      </label>
+      <div
+        class="alert alert-danger"
+        *ngIf="name.errors?.required && name.touched"
+      >
+        Enter your name.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Year:
+        <input
+          type="number"
+          class="form-control"
+          name="year"
+          formControlName="year"
+        />
+      </label>
+      <div class="alert alert-danger" *ngIf="year.errors?.min">
+        You are not 18.
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="year.errors?.required && year.touched"
+      >
+        Enter your year.
+      </div>
+    </div>
+
+    <div>
+      <label>
+        Gender:
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              [value]="gender.text"
+              formControlName="gender"
+            />
+            {{ gender.text }}
+          </label>
+        </div>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<!-- <hr /> -->
+
+<router-outlet></router-outlet>
