@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CarsService } from '../cars.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
@@ -20,11 +21,7 @@ export class CarComponent implements OnInit {
 
   newName: string = '';
 
-  constructor(
-    private service: CarsService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private service: CarsService, private router: Router) {}
 
   ngOnInit(): void {
     this.changeName = new FormControl(this.carItem.name);
