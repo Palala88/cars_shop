@@ -1,4 +1,12 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
 export class CarsService {
+  getHeroes() {
+    throw new Error('Method not implemented.');
+  }
   // foundCar: { name: string; year: number; isSold: boolean };
 
   get getAll() {
@@ -39,6 +47,15 @@ export class CarsService {
         'https://cdn.euroncap.com/media/54606/audi-a1.png?mode=crop&width=359&height=235',
     },
   ];
+
+  constructor(private http: HttpClient) {}
+
+  getTodos(id): Observable<any> {
+    return this.http.get(
+      `https://jsonplaceholder.typicode.com/comments?postId=${id}`
+    );
+    // return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
 
   addCar(car: {
     name: string;
