@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../cars.service';
 
 @Component({
-  selector: 'app-app-car',
-  templateUrl: './app-car.component.html',
-  styleUrls: ['./app-car.component.scss'],
+  selector: 'app-add-car',
+  templateUrl: './add-car.component.html',
+  styleUrls: ['./add-car.component.scss'],
 })
-export class AppCarComponent implements OnInit {
+export class AddCarComponent implements OnInit {
   carName = '';
   carYear: number = 2017;
   constructor(private service: CarsService) {}
