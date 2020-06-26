@@ -19,11 +19,5 @@ export class CarsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cars = this.service.getAll;
-    this.service.getTodos(1).subscribe(
-      (something: any) => {
-        console.log(something);
-      },
-      (error: any) => console.log(error)
-    );
   }
 }
