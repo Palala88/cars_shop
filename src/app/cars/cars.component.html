@@ -11,19 +11,11 @@
   [(ngModel)]="searchCar"
 />
 
-<select name="sort">
-  <option disabled selected>Sort by:</option>
-  <option [value]="sort.value" *ngFor="let sort of sorts">
-    {{ sort.value }}
-  </option>
-</select>
-
 <div class="list-group">
   <app-car
     class="list-group-item car_list"
-    *ngFor="let car of cars | carFilter: searchCar | sortBy; let i = index"
+    *ngFor="let car of cars | carFilter: searchCar; let i = index"
     [carIndex]="i"
     [carItem]="car"
   ></app-car>
 </div>
-

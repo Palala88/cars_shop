@@ -7,11 +7,6 @@ import { CarsService } from '../cars.service';
   styleUrls: ['./cars.component.scss'],
 })
 export class CarsComponent implements OnInit {
-  sorts: { value: string }[] = [
-    { value: 'alphabetically' },
-    { value: 'years' },
-  ];
-
   searchCar = '';
   cars = [];
 

@@ -8,7 +8,6 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AppCarComponent } from './app-car/app-car.component';
 import { CarFilterPipe } from './car-filter.pipe';
-import { SortByPipe } from './car-filter.pipe';
 
 import { CarsService } from './cars.service';
 import { LoginComponent } from './login/login.component';
@@ -21,7 +20,6 @@ import { CarInfoComponent } from './car-info/car-info.component';
     CarComponent,
     AppCarComponent,
     CarFilterPipe,
-    SortByPipe,
     LoginComponent,
     CarInfoComponent,
   ],

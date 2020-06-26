@@ -14,18 +14,3 @@ export class CarFilterPipe implements PipeTransform {
     );
   }
 }
-
-@Pipe({ name: 'sortBy' })
-export class SortByPipe implements PipeTransform {
-  transform(cars: { name: string }[]) {
-    return cars.sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    });
-  }
-}
